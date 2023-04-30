@@ -74,9 +74,8 @@
     </string-array>
 
     <string-array name="users" translatable="false">
-        <item>User</item>
-        <item>Company</item>
-        <item>Admin</item>
+        <item>Customer</item>
+        <item>Delivery Guy</item>
     </string-array>
     <string-array name="types" translatable="false">
         <item>Healthcare</item>

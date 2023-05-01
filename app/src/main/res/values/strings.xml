@@ -78,16 +78,16 @@
         <item>Delivery Guy</item>
     </string-array>
     <string-array name="types" translatable="false">
-        <item>Healthcare</item>
-        <item>Technology</item>
-        <item>Finance</item>
-        <item>Retail</item>
-        <item>Education</item>
-        <item>Manufacturing</item>
-        <item>Other</item>
+        <item>Food and Drinks</item>
+        <item>Books</item>
+        <item>Lectures</item>
+        <item>Medicine</item>
     </string-array>
 
-
+    <string-array name="pay_types" translatable="false">
+        <item>Cash</item>
+        <item>Card</item>
+    </string-array>
     <string-array name="gender" translatable="false">
         <item>Male</item>
         <item>Female</item>

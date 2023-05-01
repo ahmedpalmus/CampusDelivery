@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Provider"
+    tools:context=".AdminPage"
     android:orientation="vertical"
     android:background="@drawable/box_2"
 
@@ -48,7 +48,7 @@
             android:gravity="center|top"
             android:orientation="vertical">
             <Button
-                android:id="@+id/food"
+                android:id="@+id/manage_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -56,32 +56,15 @@
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/gradient_light"
-                android:drawableTop="@drawable/food"
+                android:drawableTop="@drawable/teammanagement"
                 android:drawablePadding="10dp"
                 android:padding="10dp"
-                android:text="Orders"
+                android:text="Manage Users"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#3949AB"
                 android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/lectures"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/gradient_light"
-                android:drawableTop="@drawable/lecture"
-                android:padding="10dp"
-                android:drawablePadding="10dp"
-                android:text="Manage Content"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#3949AB"
-                android:textSize="18dp" />
 
             <Button
                 android:id="@+id/the_profile"

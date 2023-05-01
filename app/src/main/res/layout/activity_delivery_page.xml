@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Provider"
+    tools:context=".DeliveryPage"
     android:orientation="vertical"
     android:background="@drawable/box_2"
 
@@ -38,6 +38,35 @@
             android:gravity="right"
             />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#70E807"
+        android:elevation="5dp"
+        android:layout_margin="10dp"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/l3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="My Status"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginRight="40dp"
+            android:textSize="20sp"
+            />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="Available"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -65,24 +94,6 @@
                 android:textAllCaps="false"
                 android:textColor="#3949AB"
                 android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/lectures"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/gradient_light"
-                android:drawableTop="@drawable/lecture"
-                android:padding="10dp"
-                android:drawablePadding="10dp"
-                android:text="Manage Content"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#3949AB"
-                android:textSize="18dp" />
-
             <Button
                 android:id="@+id/the_profile"
                 android:layout_marginHorizontal="30dp"

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RequestDetails"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:elevation="5dp"
+        android:paddingHorizontal="3dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:src="@drawable/min1"
+            android:gravity="left"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="50dp"
+            android:gravity="right"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:src="@drawable/min2"
+            android:gravity="right"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_t"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F3F2F2"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/shopping"
+                android:text="Adding a new subject"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Student Name"
+                    android:textSize="18dp"
+                    android:textColor="#000"
+                    android:padding="5dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/item_p"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:text="Bayan Qahtani"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="18dp"
+                    android:textColor="#000"
+                    android:padding="5dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/item_c"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="#686767"
+                    android:textStyle="italic"
+                    android:textSize="18dp"
+                    android:text="05-05-2023"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item_d"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The details and description"
+                    android:textColor="#000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/l3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="The Response"
+                    android:padding="10dp"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:background="#F1EFEF"
+                    android:layout_marginHorizontal="10dp"
+                    />
+                <EditText
+                    android:layout_marginHorizontal="10dp"
+                    android:id="@+id/fm_details"
+                    android:layout_width="match_parent"
+                    android:lines="8"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter the response"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:layout_margin="10dp"
+
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/order_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/gradient_light"
+                        android:text="Send"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#2F097C"
+                        android:textSize="18dp"
+                        android:paddingHorizontal="5dp"
+                        android:layout_marginRight="5dp"
+                        android:drawableLeft="@drawable/addtocart"
+                        android:textStyle="bold" />
+                    <Button
+                        android:visibility="gone"
+                        android:id="@+id/edit_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        android:textSize="18dp"
+                        android:background="@drawable/box_7"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
+
+

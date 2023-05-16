@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,20 +38,24 @@ public class AddItem extends AppCompatActivity {
     String URL = Server.ip + "additem.php";
     ImageView image;
     TextView l1, l2, l3;
-    String  title,price,Image = "none", details, op_type,item_id="0";
+    String  title,price,Image = "none", details,pay_type, op_type,item_id="0";
     MenuItem member;
+    Spinner Pay;
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
 
         op_type = getIntent().getStringExtra("op_type");
+        username = getIntent().getStringExtra("id");
 
         etitle = findViewById(R.id.fm_title);
         edetail = findViewById(R.id.fm_details);
         eprice = findViewById(R.id.fm_price);
         img_btn = findViewById(R.id.fm_image_btn);
         image = findViewById(R.id.fm_image);
+        Pay = findViewById(R.id.log_type);
 
         del = findViewById(R.id.fm_del);
         save = findViewById(R.id.fm_save);
@@ -176,7 +181,8 @@ public class AddItem extends AppCompatActivity {
         title = etitle.getText().toString().trim();
         price = eprice.getText().toString().trim();
         details = edetail.getText().toString().trim();
-
+        details = edetail.getText().toString().trim();
+pay_type=Pay.getSelectedItem().toString();
         l1.setTextColor(Color.WHITE);
         l2.setTextColor(Color.WHITE);
         l3.setTextColor(Color.WHITE);
@@ -227,7 +233,9 @@ public class AddItem extends AppCompatActivity {
                 data.put("details", details);
                 data.put("op_type", op_type);
                 data.put("price", price);
+                data.put("pay", pay_type);
                 data.put("item_id", item_id);
+                data.put("username", username);
 
 
                 String result = con.sendPostRequest(URL, data);

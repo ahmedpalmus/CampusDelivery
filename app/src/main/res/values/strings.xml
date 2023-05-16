@@ -78,10 +78,10 @@
         <item>Delivery Guy</item>
     </string-array>
     <string-array name="types" translatable="false">
-        <item>Food and Drinks</item>
-        <item>Books</item>
-        <item>Lectures</item>
-        <item>Medicine</item>
+        <item>Restaurant</item>
+        <item>Library</item>
+        <item>Clinic</item>
+        <item>Student\'s Affairs</item>
     </string-array>
 
     <string-array name="pay_types" translatable="false">

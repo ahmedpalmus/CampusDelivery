@@ -48,7 +48,7 @@
             android:gravity="center|top"
             android:orientation="vertical">
             <Button
-                android:id="@+id/food"
+                android:id="@+id/orders"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -67,7 +67,7 @@
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/lectures"
+                android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"

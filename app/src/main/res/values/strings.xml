@@ -81,7 +81,7 @@
         <item>Restaurant</item>
         <item>Library</item>
         <item>Clinic</item>
-        <item>Student\'s Affairs</item>
+        <item>Student Affairs</item>
     </string-array>
 
     <string-array name="pay_types" translatable="false">

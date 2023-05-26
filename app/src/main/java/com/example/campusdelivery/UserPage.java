@@ -30,25 +30,68 @@ public class UserPage extends AppCompatActivity {
                 Intent intent=new Intent(UserPage.this,ContentList.class);
                 intent.putExtra("id",id);
                 intent.putExtra("type","user");
+                intent.putExtra("field","Restaurant");
+                startActivity(intent);
+            }
+        });
+        books.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(UserPage.this,ContentList.class);
+                intent.putExtra("id",id);
+                intent.putExtra("type","user");
+                intent.putExtra("field","Library");
+                startActivity(intent);
+            }
+        });
+        meds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(UserPage.this,ContentList.class);
+                intent.putExtra("id",id);
+                intent.putExtra("type","user");
+                intent.putExtra("field","Clinic");
+                startActivity(intent);
+            }
+        });
+        lectures.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(UserPage.this,SupportList.class);
+                intent.putExtra("id",id);
+                intent.putExtra("type","user");
+                intent.putExtra("support_type","student affairs");
                 startActivity(intent);
             }
         });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* Intent intent = new Intent(AdminPage.this, Profile.class);
+                Intent intent=new Intent(UserPage.this,Profile.class);
                 intent.putExtra("id", id);
-                intent.putExtra("type", "admin");
-
-                startActivity(intent);*/
+                intent.putExtra("type", "user");
+                startActivity(intent);
             }
         });
         support.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent(UserPage.this,SupportList.class);
+                intent.putExtra("id",id);
+                intent.putExtra("type","user");
+                intent.putExtra("support_type","comp");
+                startActivity(intent);
             }
         });
 
+        orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(UserPage.this,OrdersList.class);
+                intent.putExtra("id",id);
+                intent.putExtra("type","customer");
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -125,29 +125,78 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:id="@+id/lin1"
+                        android:orientation="vertical"
                         >
-
-                        <TextView
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:padding="5dp"
-                            android:text="Number"
-                            android:textColor="#000"
-                            android:textStyle="bold"
-                            android:textSize="18dp" />
+                            android:layout_marginBottom="5dp"
+                            >
 
-                        <EditText
-                            android:id="@+id/item_q"
-                            android:layout_width="0dp"
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:text="Number"
+                                android:textColor="#000"
+                                android:textStyle="bold"
+                                android:textSize="18dp" />
+
+                            <EditText
+                                android:id="@+id/item_q"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:padding="10dp"
+                                android:textColor="#000"
+                                android:background="#EDFBFB"
+                                android:inputType="number"
+                                android:hint="Enter the Quantity"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:padding="10dp"
-                            android:textColor="#000"
-                            android:background="#EDFBFB"
-                            android:inputType="number"
-                            android:hint="Enter the Quantity"
-                            android:textSize="18dp" />
+                            android:layout_marginBottom="5dp"
+                            >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:text="Location"
+                                android:textColor="#000"
+                                android:textStyle="bold"
+                                android:textSize="18dp" />
+
+                            <EditText
+                                android:id="@+id/item_loc"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:padding="10dp"
+                                android:textColor="#000"
+                                android:background="#EDFBFB"
+                                android:inputType="number"
+                                android:hint="Enter the Address"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+                        <Button
+                            android:id="@+id/order_map"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/box_3"
+                            android:text="Take Map Location"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textColor="#2F097C"
+                            android:textSize="18dp"
+                            android:paddingHorizontal="5dp"
+                            android:layout_marginRight="5dp"
+                            android:drawableLeft="@drawable/ic_baseline_add_location_24"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
 
@@ -156,13 +205,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/gradient_light"
-                        android:text="Add To Order"
+                        android:text="Order"
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="#2F097C"
                         android:textSize="18dp"
                         android:paddingHorizontal="5dp"
                         android:layout_marginRight="5dp"
+                        android:layout_margin="20dp"
                         android:drawableLeft="@drawable/addtocart"
                         android:textStyle="bold" />
                     <Button

@@ -39,9 +39,10 @@ public class ItemDetails extends AppCompatActivity {
     MenuItem Info;
     TextView title, price, detail;
     ImageView imageView;
-    EditText quan;
-    Button edit, order;
-    String username, type, quantity;
+    EditText quan,loc;
+    Button edit, order,map_loc;
+    String username, type, quantity,location;
+    double total=0.0;
     String URL = Server.ip + "sendorder.php";
     LinearLayout lin1;
     String lat = "", lon = "";
@@ -63,6 +64,8 @@ public class ItemDetails extends AppCompatActivity {
         order = findViewById(R.id.order_item);
         quan = findViewById(R.id.item_q);
         lin1 = findViewById(R.id.lin1);
+        map_loc = findViewById(R.id.order_map);
+        loc = findViewById(R.id.item_loc);
 
         if (type.equals("provider")) {
             edit.setVisibility(View.VISIBLE);
@@ -85,14 +88,28 @@ public class ItemDetails extends AppCompatActivity {
                 finish();
             }
         });
+        map_loc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkPermission();
+            }
+        });
         order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 quantity = quan.getText().toString();
-                if (isInteger(quantity)) {
-                   // checkPermission();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Enter valid Quantity", Toast.LENGTH_LONG).show();
+                location = loc.getText().toString();
+                if (!isInteger(quantity)) {
+                    Toast.makeText(getApplicationContext(), "Enter valid quantity", Toast.LENGTH_LONG).show();
+                } else if (location.length()<2) {
+                    Toast.makeText(getApplicationContext(), "Enter valid location", Toast.LENGTH_LONG).show();
+                }else if (lat.length()<3) {
+                    Toast.makeText(getApplicationContext(), "Add the map location", Toast.LENGTH_LONG).show();
+                }else{
+                    double dprice=Double.parseDouble(Info.getPrice());
+                    double quant=Double.parseDouble(quantity);
+                    total=dprice*quant;
+                    SendInfo();
                 }
             }
         });
@@ -111,27 +128,26 @@ public class ItemDetails extends AppCompatActivity {
             if (lat.length() < 3)
                 Toast.makeText(ItemDetails.this, "" +
                         "Try agian to get the location", Toast.LENGTH_LONG).show();
-            else {
-                SendInfo();
-            }
+
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
             } else {
-                Toast.makeText(ItemDetails.this, "Permission", Toast.LENGTH_LONG).show();
+                Toast.makeText(ItemDetails.this, "Allow Location permission", Toast.LENGTH_LONG).show();
             }
         }
     }
 
     private void getLocation() {
+        lat="18.107809438262883";
+        lon="43.1144998134949";
         // Define a LocationListener
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
                 // Called when a new location is found by the network location provider.
-                lat = "" + location.getLatitude();
-                lon = "" + location.getLongitude();
-                lat="18.107809438262883";
-                lon="43.1144998134949";
+               // lat = "" + location.getLatitude();
+             //   lon = "" + location.getLongitude();
+
                 return;
             }
 
@@ -178,8 +194,10 @@ public class ItemDetails extends AppCompatActivity {
                 data.put("username", username);
                 data.put("product", Info.getItem_id());
                 data.put("quantity", quantity);
-                //data.put("lat", lat);
-                //data.put("lon", lon);
+                data.put("location", location);
+                data.put("total", ""+total);
+                data.put("lat", lat);
+                data.put("lon", lon);
 
                 String result = con.sendPostRequest(URL, data);
                 return result;

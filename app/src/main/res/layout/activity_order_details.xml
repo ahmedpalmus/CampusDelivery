@@ -50,14 +50,98 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/prod_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:padding="5dp"
-                android:text="Order's details"
+                android:text="Title"
                 android:textAlignment="center"
-                android:textColor="#807D7D"
-                android:textSize="20dp" />
+                android:textColor="#4804CF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/gradient_blue"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="#fff"
+                    android:textSize="18dp"
+                    android:text="Status"/>
+                <TextView
+                    android:id="@+id/or_status"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="#fff"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:text="Waiting..."/>
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/del_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_light"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="#0A6803"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:text="Deliver Date"/>
+                    <TextView
+                        android:id="@+id/or_d_date"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="#0A6803"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="12/12/2023"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="#0A6803"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:text="Deliver Time"/>
+                    <TextView
+                        android:id="@+id/or_d_time"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="#0A6803"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="12:15"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,10 +150,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date"
-                    android:textSize="18dp"
+                    android:text="Order Time"
+                    android:textSize="16sp"
                     android:textColor="#504F4F"
-
                     android:textStyle="bold"
                     android:padding="5dp"/>
                 <TextView
@@ -78,10 +161,65 @@
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:textColor="#817F7F"
+                    android:textColor="#4E4D4D"
                     android:textSize="18dp"
-                    android:textStyle="bold"
                     android:text="30/06/2023"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:padding="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/or_price"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="#000"
+                        android:textSize="18dp"
+                        android:text="25"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Quantity"
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:padding="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/or_quant"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="#000"
+                        android:textSize="18dp"
+                        android:text="2"/>
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -106,6 +244,29 @@
                     android:textColor="#000"
                     android:textSize="18dp"
                     android:text="Ali Ahmed"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Provider"
+                    android:textSize="18dp"
+                    android:textColor="#000"
+                    android:padding="5dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/or_prov"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:text="Restaurant"/>
             </LinearLayout>
 
             <LinearLayout
@@ -156,113 +317,269 @@
                     android:textSize="18dp"
                     android:text="..."/>
             </LinearLayout>
+            <Button
+                android:id="@+id/or_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Open Map"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:background="@drawable/box_7"
+                android:drawableLeft="@drawable/map"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/or_resp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="#7E0404"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Waiting..."/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                >
-                <TextView
+                android:orientation="horizontal">
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/or_accept"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Status"
-                    android:textSize="18dp"
-                    android:textColor="#000"
+                    android:text="Accept"
                     android:padding="5dp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:id="@+id/or_status"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textColor="#046E09"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
                     android:textSize="18dp"
-                    android:text="Ready"/>
+                    android:background="@drawable/box_6"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="3dp"
+                    />
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/or_reject"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Reject"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:textSize="18dp"
+                    android:background="@drawable/box_5"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="3dp"
+                    />
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/or_deliverded"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Delivered"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:textSize="18dp"
+                    android:background="@drawable/box_6"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="3dp"
+                    />
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/or_cancel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel Order"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="#fff"
+                    android:textSize="18dp"
+                    android:background="@drawable/box_6"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="3dp"
+                    />
             </LinearLayout>
+<LinearLayout
+    android:visibility="gone"
+    android:id="@+id/accept_lin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_light"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery Date "
+            android:textSize="18dp"
+            android:textColor="#000"
+            android:padding="5dp"
+            android:textStyle="bold"/>
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/or_deliver_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:text="Date"
+            android:textAllCaps="false"
+            android:background="@drawable/box_2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery Time"
+            android:textSize="18dp"
+            android:textColor="#000"
+            android:padding="5dp"
+            android:textStyle="bold"/>
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/or_deliver_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:text="Time"
+            android:textAllCaps="false"
+            android:background="@drawable/box_2"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Delivery Guy"
+            android:textSize="18dp"
+            android:textColor="#000"
+            android:padding="5dp"
+            android:textStyle="bold"/>
+        <Spinner
+            android:id="@+id/or_deliver_guy"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textSize="18dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:id="@+id/or_save_accept"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            android:background="@drawable/box_4"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:layout_marginHorizontal="3dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/reject_lin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/gradient_light"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Reason"
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:padding="5dp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:orientation="horizontal">
-                    <Button
-                        android:id="@+id/prof_contact"
-                        android:layout_width="0dp"
+                    >
+                    <EditText
+                        android:id="@+id/response"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:lines="5"
+                        android:gravity="top"
+
+                        android:textColor="#000"
+                        android:padding="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <Button
+                        android:id="@+id/or_save_reject"
+                        android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:text="Confirm"
+                        android:layout_height="wrap_content"
+                        android:text="Save"
                         android:padding="5dp"
                         android:textStyle="bold"
                         android:textColor="#fff"
                         android:textSize="18dp"
-                        android:background="@drawable/box_6"
+                        android:background="@drawable/box_4"
                         android:textAlignment="center"
                         android:textAllCaps="false"
+                        android:layout_marginHorizontal="3dp"
                         />
-
                 </LinearLayout>
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#F3F2F2"
-                    android:padding="10dp"
-                    android:gravity="center"
-                    android:textColor="#000"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:text="Order Items"/>
 
             </LinearLayout>
-
-            <TableLayout
-                android:id="@+id/office_hours"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:background="#E0F2F1"
-                    android:layout_height="match_parent"
-                    >
-                    <TextView
-                        android:padding="20dp"
-                        android:textSize="18dp"
-                        android:text="Drinks"/>
-                    <TextView
-                        android:padding="20dp"
-                        android:textSize="18dp"
-                        android:text="10 SA"/>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:background="#E0F2F1"
-                    android:layout_height="match_parent"
-                    android:layout_marginVertical="5dp"
-                    >
-                    <TextView
-
-                        android:padding="20dp"
-                        android:textSize="18dp"
-                        android:text="Drinks"/>
-                    <TextView
-                        android:padding="20dp"
-                        android:textSize="18dp"
-                        android:text="10 SA"/>
-                </TableRow>
-            </TableLayout>
 
         </LinearLayout>
 

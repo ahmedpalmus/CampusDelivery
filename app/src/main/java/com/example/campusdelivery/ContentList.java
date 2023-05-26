@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ContentList extends AppCompatActivity {
-    String username,type;
+    String username,type,field;
     Button add;
 
     ArrayList<MenuItem> records;
@@ -40,6 +40,7 @@ public class ContentList extends AppCompatActivity {
         setContentView(R.layout.activity_content_list);
         username=getIntent().getStringExtra("id");
         type=getIntent().getStringExtra("type");
+        field=getIntent().getStringExtra("field");
 
         add=findViewById(R.id.new_member);
 
@@ -56,6 +57,7 @@ public class ContentList extends AppCompatActivity {
                 Intent intent=new Intent(ContentList.this,AddItem.class);
                 intent.putExtra("id",username);
                 intent.putExtra("op_type","add");
+                intent.putExtra("field",field);
                 startActivity(intent);
             }
         });
@@ -83,6 +85,7 @@ public class ContentList extends AppCompatActivity {
                 HashMap<String, String> data = new HashMap<>();
                 data.put("username", username);
                 data.put("type", type);
+                data.put("field", field);
 
                 String result = con.sendPostRequest(URL, data);
                 return result;

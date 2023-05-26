@@ -32,17 +32,20 @@ public class AdminPage extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* Intent intent = new Intent(AdminPage.this, Profile.class);
+                Intent intent=new Intent(AdminPage.this,Profile.class);
                 intent.putExtra("id", id);
-                intent.putExtra("type", "admin");
-
-                startActivity(intent);*/
+                intent.putExtra("type", "user");
+                startActivity(intent);
             }
         });
         support.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent(AdminPage.this,SupportList.class);
+                intent.putExtra("id",id);
+                intent.putExtra("type","admin");
+                intent.putExtra("support_type","comp");
+                startActivity(intent);
             }
         });
 

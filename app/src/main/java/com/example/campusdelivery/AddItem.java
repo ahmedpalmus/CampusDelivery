@@ -38,7 +38,7 @@ public class AddItem extends AppCompatActivity {
     String URL = Server.ip + "additem.php";
     ImageView image;
     TextView l1, l2, l3;
-    String  title,price,Image = "none", details,pay_type, op_type,item_id="0";
+    String  field,title,price,Image = "none", details,pay_type, op_type,item_id="0";
     MenuItem member;
     Spinner Pay;
     String username;
@@ -49,6 +49,7 @@ public class AddItem extends AppCompatActivity {
 
         op_type = getIntent().getStringExtra("op_type");
         username = getIntent().getStringExtra("id");
+        field = getIntent().getStringExtra("field");
 
         etitle = findViewById(R.id.fm_title);
         edetail = findViewById(R.id.fm_details);
@@ -236,6 +237,7 @@ pay_type=Pay.getSelectedItem().toString();
                 data.put("pay", pay_type);
                 data.put("item_id", item_id);
                 data.put("username", username);
+                data.put("field", field);
 
 
                 String result = con.sendPostRequest(URL, data);

@@ -119,11 +119,10 @@ public class ProvidersList extends AppCompatActivity {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long idd) {
 
-                               /* Intent intent = new Intent(CanteenList.this, CanteenDetails.class);
-                                intent.putExtra("id",username);
-                                intent.putExtra("child", info.get(position));
-
-                                startActivity(intent);*/
+                                Intent intent=new Intent(ProvidersList.this,Profile.class);
+                                intent.putExtra("id", infos.get(position).getUsername());
+                                intent.putExtra("type", "manage");
+                                startActivity(intent);
                             }
                         });
 
@@ -136,4 +135,6 @@ public class ProvidersList extends AppCompatActivity {
         Async la = new Async();
         la.execute();
     }
+
+
 }

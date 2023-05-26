@@ -80,16 +80,16 @@ public class LoginPage extends AppCompatActivity {
                     Intent intent = new Intent(LoginPage.this, UserPage.class);
                     intent.putExtra("id", username);
                     startActivity(intent);
-                } else if (result.equalsIgnoreCase("provider")) {
-                    Intent intent = new Intent(LoginPage.this, Provider.class);
-                    intent.putExtra("id", username);
-                    startActivity(intent);
                 } else if (result.equalsIgnoreCase("delivery guy")) {
                     Intent intent = new Intent(LoginPage.this, DeliveryPage.class);
                     intent.putExtra("id", username);
                     startActivity(intent);
                 }else if (result.equalsIgnoreCase("admin")) {
                     Intent intent = new Intent(LoginPage.this, AdminPage.class);
+                    intent.putExtra("id", username);
+                    startActivity(intent);
+                }else if (result.equalsIgnoreCase("provider")) {
+                    Intent intent = new Intent(LoginPage.this, Provider.class);
                     intent.putExtra("id", username);
                     startActivity(intent);
                 }

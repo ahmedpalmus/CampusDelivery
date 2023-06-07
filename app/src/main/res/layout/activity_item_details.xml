@@ -179,7 +179,6 @@
                                 android:padding="10dp"
                                 android:textColor="#000"
                                 android:background="#EDFBFB"
-                                android:inputType="number"
                                 android:hint="Enter the Address"
                                 android:textSize="18dp" />
                         </LinearLayout>

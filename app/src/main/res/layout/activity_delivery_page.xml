@@ -72,6 +72,72 @@
             android:textSize="20sp"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/box_3"
+        android:elevation="5dp"
+        android:padding="5dp"
+        android:layout_marginHorizontal="5dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="Delivered Orders: "
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/deliv_ord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:textColor="#3949AB"
+                android:textStyle="bold"
+                android:text="5 Orders"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="Last Order: "
+                android:gravity="center"
+                android:textColor="#000"
+                android:layout_marginRight="10dp"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/deliv_ordd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:textColor="#3949AB"
+                android:textStyle="bold"
+                android:text="07/06/2023"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

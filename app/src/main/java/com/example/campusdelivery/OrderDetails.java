@@ -103,12 +103,21 @@ public class OrderDetails extends AppCompatActivity {
         if(type.equals("provider") && Info.getState().equalsIgnoreCase("Waiting...")){
             accept.setVisibility(View.VISIBLE);
             reject.setVisibility(View.VISIBLE);
+            deliver_btn.setVisibility(View.GONE);
+            cancel.setVisibility(View.GONE);
+
         }
         if(type.equals("delivery guy")){
             deliver_btn.setVisibility(View.VISIBLE);
+            cancel.setVisibility(View.GONE);
+            accept.setVisibility(View.GONE);
+            reject.setVisibility(View.GONE);
         }
         if(type.equals("customer") && Info.getState().equalsIgnoreCase("Waiting...")){
             cancel.setVisibility(View.VISIBLE);
+            accept.setVisibility(View.GONE);
+            reject.setVisibility(View.GONE);
+            deliver_btn.setVisibility(View.GONE);
 
         }
         if(Info.getState().equalsIgnoreCase("accept") || Info.getState().equalsIgnoreCase("delivered")){

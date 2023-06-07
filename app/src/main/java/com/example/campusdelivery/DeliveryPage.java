@@ -12,16 +12,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
 
 public class DeliveryPage extends AppCompatActivity {
-    String id,status;
+    String id,status,last_time,total;
     Button orders,support,profile;
     Switch deliv_status;
     private final String URL = Server.ip + "getstatus.php";
     private final String URL2 = Server.ip + "setstatus.php";
+
+    TextView last,tot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,8 @@ public class DeliveryPage extends AppCompatActivity {
         orders=findViewById(R.id.orders);
         support=findViewById(R.id.the_support);
         profile=findViewById(R.id.the_profile);
+        last=findViewById(R.id.deliv_ordd);
+        tot=findViewById(R.id.deliv_ord);
 
         id=getIntent().getStringExtra("id");
 
@@ -90,6 +95,12 @@ public class DeliveryPage extends AppCompatActivity {
         getInfos();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getInfos();
+    }
+
     public void ChanegStatus(){
         if(status.equalsIgnoreCase("Not Available")){
             deliv_status.setChecked(true);
@@ -132,7 +143,15 @@ public class DeliveryPage extends AppCompatActivity {
                 else if (result.equals("failure")) {
                     Toast.makeText(getApplicationContext(), "try again", Toast.LENGTH_LONG).show();
                 } else{
-                    status=result;
+
+
+                    status=result.split("#")[0];
+                    last_time=result.split("#")[1];
+                    total=result.split("#")[2];
+
+                    last.setText(last_time);
+                    tot.setText(total);
+
                     if(status.equalsIgnoreCase("Available")){
                         deliv_status.setChecked(true);
                         deliv_status.setText("Available");
@@ -173,6 +192,8 @@ public class DeliveryPage extends AppCompatActivity {
                 else if (result.equals("failure")) {
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.noResult), Toast.LENGTH_LONG).show();
                 } else if (result.equalsIgnoreCase("success")) {
+
+
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.success), Toast.LENGTH_LONG).show();
                 }
             }

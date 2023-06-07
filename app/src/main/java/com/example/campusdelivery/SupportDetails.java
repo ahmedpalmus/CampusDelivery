@@ -53,7 +53,7 @@ public class SupportDetails extends AppCompatActivity {
         title.setText(support.getSupp_title());
         date.setText(support.getSupp_date());
         detail.setText(support.getSupp_detail());
-        user.setText(support.getUsername());
+        user.setText("Sent By: "+support.getUsername());
         if (!support.getSupp_response().equals("none"))
             editText.setText(support.getSupp_response());
 
